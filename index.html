@@ -10,7 +10,9 @@
 
   <script>
 
-    function getComputerChoice () {
+    function playRound(humanChoice, computerChoice){
+
+    function getComputerChoice (computerChoice) {
       const random = Math.random();
 
       if (random < 0.33) {
@@ -25,7 +27,29 @@
       }
     }
 
-     getComputerChoice();
+    function getHumanChoice (humanChoice) {
+      let choice = window.prompt("Do you want to choose-Pizza, Sushi or Cake");
+      choice = choice.toLowerCase();
+
+      if (choice ===  'pizza')  {
+        console.log('pizza');
+      } else if ( choice === 'sushi' ) {
+        console.log('sushi');
+      } else if ( choice === 'cake') {
+        console.log('cake');
+      }
+    }
+  }
+
+
+    
+      const humanSelection = getHumanChoice();
+      const computerSelection = getComputerChoice();
+
+      const humanScore = 0
+      const computerScore = 0
+
+      playRound(humanSelection, computerSelection);
     
   </script>
   
