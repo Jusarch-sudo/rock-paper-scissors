@@ -4,97 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="rps.js" defer></script>
+ 
+
   <title>Rock Paper Scissors</title>
 </head>
 <body>
 
-  <script>
-     let humanScore = 0;
-let computerScore = 0;
-
-function getComputerChoice() {
-  const random = Math.random();
-  if (random < 0.33) return 'pizza';
-  if (random < 0.67) return 'sushi';
-  return 'steak';
-}
-
-function getHumanChoice() {
-  const choice = (window.prompt("Choose: Pizza, Sushi or Steak") || '').toLowerCase();
-  if (choice === 'pizza' || choice === 'sushi' || choice === 'steak') return choice;
-  return null;
-}
-
-function playRound() {
-  const humanChoice = getHumanChoice();
-  const computerChoice = getComputerChoice();
-  if (!humanChoice) return `Invalid choice. Score: You ${humanScore}, Computer ${computerScore}`;
-
-  if (humanChoice === 'pizza') {
-    if (computerChoice === 'sushi') {
-      humanScore++;
-      console.log("You win! Pizza beats sushi");
-    } else if (computerChoice === 'steak') {
-      computerScore++;
-      console.log("You lose! Steak beats pizza");
-    } else {
-      console.log("It's a tie");
-    }
-  } else if (humanChoice === 'steak') {
-    if (computerChoice === 'sushi') {
-      computerScore++;
-      console.log("You lose! Sushi beats steak");
-    } else if (computerChoice === 'pizza') {
-      humanScore++;
-      console.log("You win! Steak beats pizza");
-    } else {
-      console.log("It's a tie!");
-    }
-  } else if (humanChoice === 'sushi') {
-    if (computerChoice === 'steak') {
-      humanScore++;
-      console.log("You win! Sushi beats steak");
-    } else if (computerChoice === 'pizza') {
-      computerScore++;
-      console.log("You lose! Pizza beats sushi");
-    } else {
-      console.log("It's a tie");
-    }
-  }
-
-
-}
-
-
-
-
-function playGame(rounds = 5) {
-  for (let i = 1; i <= rounds; i++) {
-    const result = playRound();
-    if (typeof result === 'string') {
-      // playRound returned the invalid-choice string
-      console.log(`Round ${i}: ${result}`);
-    } else {
-      // playRound used console.log for messages; still show score per round
-      console.log(`Round ${i}: Score: You ${humanScore}, Computer ${computerScore}`);
-    }
-  }
-
-  const final =
-    humanScore > computerScore ? 'You win the game!'
-    : humanScore < computerScore ? 'Computer wins the game!'
-    : "The game is a tie!";
-  console.log(`Final score — You: ${humanScore}, Computer: ${computerScore}. ${final}`);
-  return { humanScore, computerScore, final };
-}
-
-playGame(5);
-
-    
-
-    
-    
-  </script>
+  <div class="button-row"
+  style="
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+">
+    <button class="btn" id="pizza"><img src="images/pizza.svg" alt=""></button>
+    <button class="btn" id="sushi"><img src="images/sushi.svg" alt=""></button>
+    <button class="btn" id="steak"><img src="images/cut_of_meat.svg" alt=""></button>
+  </div>
   
+  <div class="info" id="result"></div>
 </body>
 </html>

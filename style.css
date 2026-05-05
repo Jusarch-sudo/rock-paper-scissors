@@ -1,0 +1,42 @@
+#result {
+  display: flex;
+  justify-content: center;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: .5rem;
+  width: 500px ;
+  max-width: 1000px;
+  border:5px dashed #b40f0f;
+  margin:10% auto;
+};
+
+/*.food {
+   display: flex;
+   justify-content: space-between;
+   padding: .5rem;
+  width: 600px ;
+  max-width: 100px;
+  border:1px solid #b40f0f;
+  margin:10% auto;
+};*/
+
+
+.button-row {
+  display: flex;           /* parent is the flex container */
+  gap: 20px;               /* space between items */
+  justify-content: center; /* center row */
+  align-items: center;
+  padding: .5rem;
+  width: 500px ;
+  max-width: 1000px;
+  box-sizing: border-box;
+ 
+}
+
+.button-row button {
+  background: none;
+  border: none;
+  padding: 6px; /* optional */
+};
+
