@@ -16,9 +16,9 @@ result.appendChild(score);
 
 function getComputerChoice() {
   const r = Math.random();
-  if (r < 0.33) return 'pizza';
-  if (r < 0.67) return 'sushi';
-  return 'steak';
+  if (r < 0.33) return 'Pizza';
+  if (r < 0.67) return 'Sushi';
+  return 'Steak';
 }
 
 /*function showResult(playerChoice, computerChoice, outcomeMessage) {
@@ -60,7 +60,7 @@ function playRound(playerSelection) {
   if (humanChoice === computerChoice) {
     updateDisplay(humanChoice, computerChoice, "It's a tie");
   } else {
-    const wins = { pizza: 'sushi', sushi: 'steak', steak: 'pizza' };
+    const wins = { pizza: 'Sushi', sushi: 'Steak', steak: 'Pizza' };
     let outcomeMessage;
     if (wins[humanChoice] === computerChoice) {
       humanScore++;
