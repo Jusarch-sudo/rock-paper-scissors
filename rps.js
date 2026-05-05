@@ -98,9 +98,9 @@ function playGame(rounds = 5) {
 playGame(5);
 // attach after DOM loaded (place script before </body> or use DOMContentLoaded)
 
-document.getElementById("pizza")?.addEventListener("click", () => playRound('pizza'));
-document.getElementById("sushi")?.addEventListener("click", () => playRound('sushi'));
-document.getElementById("steak")?.addEventListener("click", () => playRound('steak'));
+document.getElementById("pizza")?.addEventListener("click", () => playRound('Pizza'));
+document.getElementById("sushi")?.addEventListener("click", () => playRound('Sushi'));
+document.getElementById("steak")?.addEventListener("click", () => playRound('Steak'));
 
 /*const pizza = document.getElementById("pizza");
 const sushi = document.getElementById("sushi");
